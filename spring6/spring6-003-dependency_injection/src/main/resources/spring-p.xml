@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="com.aniu.spring6.bean.Person" p:name="于谦" p:age="60">
+        <property name="hobby">
+            <array>
+                <ref bean="h1"/>
+                <ref bean="h2"/>
+                <ref bean="h3"/>
+                <ref bean="h4"/>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="h1" class="com.aniu.spring6.bean.Hobby" p:hobbyName="抽烟"/>
+    <bean id="h2" class="com.aniu.spring6.bean.Hobby" p:hobbyName="喝酒"/>
+    <bean id="h3" class="com.aniu.spring6.bean.Hobby" p:hobbyName="烫头"/>
+    <bean id="h4" class="com.aniu.spring6.bean.Hobby" p:hobbyName="吃肥肉"/>
+
+
+</beans>

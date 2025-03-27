@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+   <!-- &lt;!&ndash;bean实例化的第一种方法：通过构造方法进行实例化&ndash;&gt;
+    <bean id="user" class="com.aniu.spring6.beanInstantiation.User"/>
+
+
+    &lt;!&ndash;bean实例化的第二种方式：通过简单工厂模式实例化，就是静态工厂模式&ndash;&gt;
+    &lt;!&ndash;因为简单工厂模式中获取对象的方法是静态的，所以不用创建对象，直接指定工厂方法即可&ndash;&gt;
+    <bean id="person" class="com.aniu.spring6.beanInstantiation.PersonFactory" factory-method="getPerson"/>
+
+
+    &lt;!&ndash;bean实例化的第三种方法：通过factory-bean进行实例化，就是通过工厂方法模式进行bean的实例化&ndash;&gt;
+    &lt;!&ndash;因为工厂方法模式中的方法是实例化方法需要先创建对象才能调用，所以需要指定factory-bean和factory-method&ndash;&gt;
+    &lt;!&ndash;factory-bean用来指定工厂bean是哪个，factory-method用来指定工厂方法是哪个&ndash;&gt;
+    &lt;!&ndash;使用这个工厂方法进行bean的实例化时，指定了factory-bean后就可以不用指定bean的class，
+            因为factory-bean中的factory-method已经制定了返回值类型&ndash;&gt;
+    <bean id="userFactory" class="com.aniu.spring6.beanInstantiation.UserFactory"/>
+&lt;!&ndash;    <bean id="user2" class="com.aniu.spring6.beanInstantiation.User" factory-bean="userFactory" factory-method="getUser"/>&ndash;&gt;
+    <bean id="user2" factory-bean="userFactory" factory-method="getUser"/>
+
+
+    &lt;!&ndash;bean实例化的第四种方式：实现FactoryBean接口进行实例化&ndash;&gt;
+    &lt;!&ndash;因为StudentFactory已经实现了FactoryBean接口，所以直接将StudentFactory放入容器中即可，不用指定别的，返回的就是Student&ndash;&gt;
+    <bean id="student" class="com.aniu.spring6.beanInstantiation.StudentFactory"/>-->
+
+
+    <bean id="date" class="com.aniu.spring6.beanInstantiation.DateFactory" p:strDate="2024-1-1"/>
+    <bean id="student" class="com.aniu.spring6.beanInstantiation.Student" p:birthday-ref="date"/>
+
+</beans>

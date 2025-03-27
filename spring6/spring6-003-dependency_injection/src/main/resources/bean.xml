@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--<bean id="userDao" class="com.aniu.spring6.dao.UserDao" />
+
+    &lt;!&ndash;<bean id="userService" class="com.aniu.spring6.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>&ndash;&gt;
+
+    <bean id="studentDao" class="com.aniu.spring6.dao.StudentDao"/>
+    <bean id="studentService" class="com.aniu.spring6.service.StudentService">
+        <constructor-arg name="studentDao" ref="studentDao"/>
+        <constructor-arg name="userDao" ref="userDao"/>
+    </bean>-->
+
+
+
+    <bean id="userDao" class="com.aniu.spring6.dao.UserDao" />
+
+    <bean id="userService" class="com.aniu.spring6.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <bean id="userDao2" class="com.aniu.spring6.dao.UserDao" />
+
+    <bean id="userService2" class="com.aniu.spring6.service.UserService">
+        <property name="userDao">
+            <bean class="com.aniu.spring6.dao.UserDao"/>
+        </property>
+    </bean>
+
+  <!--  简单类型数组的注入
+    <bean id="person" class="com.aniu.spring6.bean.Person">
+        <property name="name" value="aniu"/>
+        <property name="age" value="20"/>
+        <property name="hobby">
+            <array>
+                <value>抽烟</value>
+                <value>喝酒</value>
+                <value>烫头</value>
+            </array>
+        </property>
+    </bean>-->
+
+
+
+
+    <bean id="h1" class="com.aniu.spring6.bean.Hobby">
+        <property name="hobbyName" value="抽烟"/>
+    </bean>
+    <bean id="h2" class="com.aniu.spring6.bean.Hobby">
+        <property name="hobbyName" value="抽烟"/>
+    </bean>
+    <bean id="h3" class="com.aniu.spring6.bean.Hobby">
+        <property name="hobbyName" value="抽烟"/>
+    </bean>
+    <bean id="h4" class="com.aniu.spring6.bean.Hobby">
+        <property name="hobbyName" value="抽烟"/>
+    </bean>
+
+
+    <!--引用数据类型数组的注入-->
+    <bean id="person" class="com.aniu.spring6.bean.Person">
+        <property name="name" value="aniu"/>
+        <property name="age" value="20"/>
+        <property name="hobby">
+            <array>
+               <ref bean="h1"/>
+               <ref bean="h2"/>
+               <ref bean="h3"/>
+               <ref bean="h4"/>
+            </array>
+        </property>
+    </bean>
+</beans>
