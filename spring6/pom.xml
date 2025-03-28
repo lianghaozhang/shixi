@@ -18,6 +18,7 @@
         <module>spring6-006-bean-lifecycle</module>
         <module>review-reflect</module>
         <module>review-annotation</module>
+        <module>spring6-007-jdbc</module>
     </modules>
 
     <dependencies>
