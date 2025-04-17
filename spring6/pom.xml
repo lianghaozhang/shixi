@@ -19,6 +19,8 @@
         <module>review-reflect</module>
         <module>review-annotation</module>
         <module>spring6-007-jdbc</module>
+        <module>dynamic-proxy-jdk</module>
+        <module>spring6-008-spring-aspectj-anno</module>
     </modules>
 
     <dependencies>
@@ -57,6 +59,15 @@
             <artifactId>jakarta.annotation-api</artifactId>
             <version>2.1.1</version>
         </dependency>
+
+        <!--aspect依赖-->
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-aspects -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>5.3.1</version>
+        </dependency>
+
     </dependencies>
 
     <properties>
